@@ -1,13 +1,36 @@
 <html>
     <head>
-        <script src="./source/hello.js"></script>
-        <script src="./source/world.js"></script>
+        <!-- 
+            변수 이름 충돌로 발생 (여러 파일이 같은 이름의 변수를 사용한다면 이름 충돌의 가능성이 존재한다.)
+            ==> 이 문제를 해결하기 위해서 모듈을 사용하자
+        -->
+        <!--
+             <script src="./source/hello.js"></script>
+            <script src="./source/world.js"></script> 
+        -->
     </head>
     <body>
         <h1>Hello, Webpack</h1>
         <div id ="root"></div>
+        <!-- 
+            이전에 파일이 100개라면 모두 다운 받아야 했다.
+            하지만 웹팩을 통해 1개의 파일만 다운 받으면 된다.
+            (사용자도 좋고 서버도 좋고)
+            import, export => (웹팩 처리) => 오래된 브라우저에서도 사용가능 하도록한다.
+         -->
+        <script src="./public/index_bundle.js"></script>
     </body>
-    <script>
-        document.querySelector("#root").innertHTML = word;
+    <script type="module">
+        /*
+            import export는 비교적 최신 기능 이기에 오랜된 웹브라우저에서 동작하지 않는다.
+            지금은 2개의 파일(hello.js world.js)만 다운 받지만 실제로 파일은 엄청나게 많다. 이 모든 파일들을 다운 받으면 네트워크 connection에 무리가 간다.(서비스 속도 느려짐)
+            ==> 모듈 + 여러개의 파일을 하나로 묶어서 제공 ---> '번들러(웹팩)'
+        */
+       /*
+            웹팩을 통해서 얻을 수 있는 이점은 리팩토링이다.
+            리팩토링 : 구동되는 방법은 그대로 유지하면서 내부의 코드를 더 효율적으로 유지한다.
+            -> 구형 브라우저 사용가능하게 만든다
+            -> 여러개의 파일 하나로 묶을 수 있다(번들링)
+       */
     </script>
 </html>
