@@ -12,7 +12,7 @@ webpack : 하나의 자바스크립트 파일에 js, css, 이미지와 같은 �
      
 2. npm i -D webpack webpack-cli
        
-3. npx webpack --entry ./source/index.js --output ./public/index_bundle.js
+3. npx webpack --entry ./source/index.js --output ./public/index_bundle.js                
 내가 작업하고 있는 프로젝트에서 entry file은 source 폴더의 index.js다.           
 그리고 public 폴더에 index_bundle.js라는 이름으로 index.js와 index.js가 사용하고 있는 파일들을 하나로 만들어서 가져다 놔!!!           
            
