@@ -21,4 +21,19 @@ webpack : 하나의 자바스크립트 파일에 js, css, 이미지와 같은 �
         
 1. webpack.config.js 파일 작성
       
-2. npx webpack --config webpack.config.js 입력 (만약 파일 이름을 webpack.config.js로 작성하면 npm webpack이라고만 작성해도 된다.)
+2. npx webpack --config webpack.config.js 입력 (만약 파일 이름을 webpack.config.js로 작성하면 npm webpack이라고만 작성해도 된다.)         
+
+
+### webpack 운영 모드
+웹팩은 굉장히 많은 설정을 가지고 있고 이를 사용자가 모두 기억할 수 없으므로 3가지 모드를 제공한다. (production, none, development)        
+
+### webpack 로더(굉장히 중요하다.)
+웹팩은 javascript가 아닌 css나 png도 번들링 해준다. 그리고 이역할을 로더가 수행한다.        
+
+설치)       
+npm install -D style-loader css-loader       
+
+로더 : 입력한 asset들을 가공하여 우리가 원하는 output을 만들어주는 일종의 가공 공정         
+(이러한 로더를 module의 rules라는 부분에 로더를 setting한다.         
+test는 로더에 해당되는 이름을 검출하는 코드를 작성한다.          
+test에 해당되는 파일이 발견되면 use에 작성된 로더를 통해 처리한다. 로더는 뒤쪽에 있는 것 부터 먼저 실행 된다.)
