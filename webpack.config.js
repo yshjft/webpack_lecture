@@ -4,10 +4,13 @@ const path = require('path');
 
 module.exports={
     mode :"development",
-    entry : "./source/index.js",
+    entry : { // 여러개의 entry를 설정하는 법
+        index : "./source/index.js",
+        about : "./source/about.js"
+    },
     output : {
         path : path.resolve(__dirname, "public"),
-        filename : 'index_bundle.js'
+        filename : '[name]_bundle.js' // [name] : 약속이다. entry에서 정한 index나 about이 들어가게 된다.
     },
     module:{
         rules: [
