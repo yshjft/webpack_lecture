@@ -1,6 +1,8 @@
 // 웹팩 홈페이지 참고, document -> configuration
 
 const path = require('path');
+//플러그인은 직접 가져와야 한다.
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //html 탬플릿 자동으로 만들어주는 플러그인
 
 module.exports={
     mode :"development",
@@ -23,5 +25,17 @@ module.exports={
             }
 
         ]
-    }
+    },
+    plugins:[
+        new HtmlWebpackPlugin({
+            template : './source/index.html',
+            filename : './index.html',
+            chunks:['index'],
+        }),
+        new HtmlWebpackPlugin({
+            template : './source/about.html',
+            filename : './about.html',
+            chunks:['about'],
+        }),
+    ]
 }

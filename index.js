@@ -9,11 +9,11 @@ const app=express();
 app.use('/public', express.static(__dirname + '/public'));
 
 app.get('/', (req, res)=>{
-    res.sendFile(__dirname+'/index.html');
+    res.sendFile(__dirname+'/public/index.html');
 })
 
 app.get('/about', (req, res)=>{
-    res.sendFile(__dirname+'/about.html');
+    res.sendFile(__dirname+'/public/about.html');
 })
 
 app.listen('3000', ()=>{
